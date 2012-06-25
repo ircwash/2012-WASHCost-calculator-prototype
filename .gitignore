@@ -1,0 +1,15 @@
+*.class
+*.pyc
+*.pyo
+/.sass-cache
+/static
+/.idea
+/washcost/local_settings.py
+*.sqlite
+
+/compass
+/localViewSource
+/supplies
+/design/sortButtons.png
+/runserver.bat
+/washcost/localHome.html

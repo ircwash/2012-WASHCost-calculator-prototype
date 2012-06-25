@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block bodyclass %}create{% endblock %}
+
+{% block content %}
+
+ 
+<div class="col2_1">
+	<h2 class="large">Lets get <span>started!</span></h2>
+	<p>Start off with creating your model in the WASHCost calculator. Define the scope of your model by entering data into the categories and their indicators and create output.</p>
+		<form action="{% url project_new %}" method="post">
+			{% csrf_token %}
+			<input type="submit" value="create" class="button">
+		</form>
+	
+
+</div>
+
+
+<br class="clear" />
+
+
+
+<div style="width:64%">
+	<h3>Tutorial</span></h3>
+	<div class="col2_1 box fold">
+		<div class="foldShadeHide"></div>
+		<h4>Simple <span>Model</span></h4>
+		<p>Not sure yet how it works yet? Read the WASHCost calculator tutorial first.</p>
+	<a href="/features/" class="button">read more</a>
+	</div>
+	
+	<!--
+	>
+	<div class="col2_2 box fold">
+		<div class="foldShadeHide"></div>
+		<h4>Extended <span>Model</span></h4>
+		<p>Donec quis libero turpis. Fusce pellentesque, odio eu convallis vulputate, erat lacus feugiat tellus, condimentum posuere est purus quis purus. Praesent eu lacus est.</p>
+		<form action="{% url project_new %}" method="post">
+			{% csrf_token %}
+			<input type="submit" value="create" class="button">
+		</form>
+	</div>
+	
+	-->
+	
+ 
+	<br class="clear" />
+</div>
+{% endblock %}

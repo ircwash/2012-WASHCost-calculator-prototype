@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block bodyclass %}projectList{% endblock %}
+
+{% block content %}
+<nav class="side">
+	<form class="confirm_submit" method="post" action="{% url 'deactivate_user' %}">
+		{% csrf_token %}
+		<input type="submit" class="button confirm" value="Deactivate account">
+	</form>
+</nav>
+<nav class="sub">
+	<!--todo: add correct uris -->
+	<a class="selected" href="">Your reports<span/></a>
+
+</nav>
+<br class="clear" />
+
+{% if project_list %}
+<table class="projectList" cellpadding="0" cellspacing="0" border="0">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="4">
+				<!-- todo: remove dummy pagination -->
+				<nav>
+					<a href="" class="prev">prev</a>
+					<a href="" class="page page1">1</a>
+					<a href="" class="page page2">2</a>
+					<a href="" class="page page3">3</a>
+					<a href="" class="page page4">4</a>
+					<a href="" class="page page5">5</a>
+					<a href="" class="next">next</a>
+				</nav>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		{% for project in project_list %}
+		<tr class="{{ project.status|slugify }}" onclick="location.href = '{% url 'project_detail' project.id %}'">
+			<td data-sort="{{ project.title }}">
+				{{ project.title }}
+			</td>
+			<td data-sort="s{{ project.created|date:"U" }}">{{ project.created }}</td>
+			<td data-sort="{{ project.status|slugify }}"><span class="status"> &nbsp; &nbsp; &nbsp; </span>{{ project.status }}</td>
+			<td>
+				{% if project.status == 'completed' %}
+					<a href="{% url 'project_csv' project.id %}">CSV</a>
+					<a href="{% url 'project_pdf' project.id %}">PDF</a>
+				{% else %}
+					<a class="disabled" href="{% url 'project_csv' project.id %}">CSV</a>
+					<a class="disabled" href="{% url 'project_pdf' project.id %}">PDF</a>
+				{% endif %}
+				<!--todo: add correct uri-->
+				<a class="confirm" href="{% url 'project_delete' project.id %}">delete</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+
+{% endblock %}

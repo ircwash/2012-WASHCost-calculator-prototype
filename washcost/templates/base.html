@@ -1,0 +1,72 @@
+{% load url from future %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+		{% block prehead %}{% endblock %}
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>{% block pagetitle %}{% endblock%}WASHCost calculator</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="{{ STATIC_URL }}/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<!-- CSS -->
+		<link href="{{ STATIC_URL }}css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<link href="{{ STATIC_URL }}css/print.css" media="print" rel="stylesheet" type="text/css" />
+		<!-- JS -->
+		<script src="{{ STATIC_URL }}js/modernizr-2.5.3.js"></script>
+		{% block extrahead %}{% endblock%}
+	</head>
+	<body class="{% block bodyclass %}{% endblock%}">
+		{% block body %}
+		<div id="page">
+			<div id="topbar"><div>&nbsp;</div></div>
+			<header><div>
+				<a href="/"><h1><span>WASHCost</span></h1></a>
+				<nav id="pages">
+					<a href="/">Home<span/></a>
+					<a href="{% url 'features' %}">Features<span/></a>
+					<a href="{% url 'support' %}">Support<span/></a>
+					<a href="{% url 'resources' %}">Resources<span/></a>
+				</nav>
+				<nav id="user-tools">
+					{% if user.is_authenticated %}
+					<a href="{% url 'create' %}" class="create">Start<span/></a>
+					<a href="{% url 'project_list' %}">My stuff<span/></a>
+					<a href="{% url 'logout' %}">Sign out</a>
+					{% else %}
+					<a href="{% url 'login' %}">Sign in<span/></a>
+					{% endif %}
+				</nav>
+				<br class="clear" />
+			</div></header>
+			<div id="content">{% block content%}{% endblock %}</div>
+		</div>
+		<footer id="footer"><div>
+			<p>Powered by:</p>
+			<nav>
+				<a class="irc" href="http://www.irc.nl/"><span>IRC</span></a>
+				<a class="life" href="http://www.washcost.info/"><span>Life-cycle costs approach</span></a>
+			</nav>
+		</div></footer>
+		<!-- JavaScript at the bottom for fast page loading -->
+		<!-- todo: combine and minify -->
+		<script src="{{ STATIC_URL }}js/html5.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/lib/jquery/jquery-1.7.2.min.js"><\/script>')</script>
+		<script src="{{ STATIC_URL }}js/jquery.tinysort.min.js"></script>
+		<script src="{{ STATIC_URL }}js/jquery.fancybox.min.js"></script>
+		{% block javascript %}{% endblock%}
+		<script type="text/javascript">
+			{% block inlineJavascript %}
+			{% endblock %}
+		</script>
+		<script src="{{ STATIC_URL }}js/washcost.js"></script>
+		{% endblock %}
+	</body>
+</html>

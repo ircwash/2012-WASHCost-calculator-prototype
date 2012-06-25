@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.fancybox.css">
+{% endblock %}
+
+{% block content %}
+<nav class="side">
+	<a href="{% url 'project_detail' project.id %}" class="button">switch category</a>
+	<a href="{% url 'project_answers' project.id %}" class="button">generate report</a>
+</nav>
+
+<h2>{{ project.title }}, <span>{{ category }}</span></h2>
+
+<nav class="bread"><a href="{% url 'project_detail' project.id %}">Back to main categories</a><a>{{ category }}</a></nav>
+
+<hr />
+
+<nav id="question-list">
+	{% for q in questions %}
+	<a href="#{{ q.number }}" id="{{ q.number }}" class="{{ q.status }}">{{ q.number }}<div class="corner"></div><div class="selected"></div></a>
+	{% endfor %}
+</nav>
+
+<form class="questionBlock" method="post" action="">
+	{% csrf_token %}
+	<div id="question-container">
+		{{ form.management_form }}
+		<div id="questions">
+			{% for subform in form %}
+			<div class="question">
+				<p>{{ subform.instance.question }}<a href="#info{{ forloop.counter }}" class="info"><span>(i)</span></a></p>
+				{% if subform.instance.question.question_type == subform.instance.question.OPEN_CONDITIONAL %}
+					{% for field in subform %}
+						{% if field.label == 'Answer' %}
+						<div class='conditional-question'>
+							<p>{{ subform.instance.question.conditional_question }}</p>
+							{{ field }}
+						</div>
+						{% else %}
+							{{ field }}
+						{% endif %}
+					{% endfor %}
+				{% else %}
+					{{ subform }}
+				{% endif %}
+				<div class="info" id="info{{ forloop.counter }}"><p>{{ subform.instance.question.info_question|safe }}</p></div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<input class="submit next" type="submit" name="next" value="Next" />
+	<input class="submit later" type="submit" name="later" value="I'll answer later" />
+	{% if category.name == 'Life-cycle costs' %}
+	<div class="legend">
+		<h4>Life-cycle cost components</h4>
+		<ul>
+			<li class="cap"><span></span>Capital Expenditure (CapEx)</li>
+			<li class="ope"><span></span>Operating and minor maintenance expenditure (OpEx)</li>
+			<li class="cam"><span></span>Capital maintenance expenditure (CapManEx)</li>
+			<li class="coc"><span></span>Cost of capital (CoC)</li>
+			<li class="exp"><span></span>Expenditure on direct support (ExpDS)</li>
+			<li class="exi"><span></span>Expenditure on indirect support (ExpIDS)</li>
+		</ul>
+	</div>
+	{% endif %}
+</form>
+{% endblock %}
+
+{% block inlineJavascript %}
+current = 1;
+$(document).ready(init_slider());
+
+function init_question_list() {
+	{% for question in questions %}
+
+	$("#question-list #{{ question.number }}").click(function() {
+		$("#questions").css("left","{{ question.pixels }}px");
+		current = {{ question.number }};
+		$("#question-list a").removeClass('current');
+		$(this).addClass('current');
+		return false;
+	})
+	{% endfor %}
+	
+	$('.conditional-question').each(function() {
+		var value = $(this).prevAll('ul').find('input[type=radio][checked=checked]').attr('value');
+		if (value != 'True') {
+			$(this).hide();
+		}
+	});
+	
+	$('input[type="radio"]').change(function(e) {
+		var value = $(this).attr('value');
+		var conditional = $(this).closest('ul').nextAll('.conditional-question');
+		if (value == 'True') {
+			$(conditional).find('input').attr('value', '');
+			$(conditional).show();
+		}
+		else {
+			$(conditional).find('input').attr('value', 'No');
+			$(conditional).hide();
+		}
+	})
+}
+
+function init_slider() {
+	initQuestionsAdditional();
+	$("#question-list #1").addClass('current');
+	init_question_list();
+
+	$('input[type="submit"]').click(function(e) {
+		e.preventDefault();
+		$.post("", $("form").serialize(), function(data) {
+			$('#question-container > input').replaceWith($(data).find('#question-container > input'));
+			$('#questions > div').replaceWith($(data).find('#questions > div'));
+			$('#question-list').replaceWith($(data).find('#question-list'));
+			init_question_list();
+
+			if ($(data).find('.errorlist').length) {
+				return false;
+			}
+
+			current += 1;
+			if (current > {{ questions.count }}) {
+				window.location.href = '{% url 'project_detail' project.id %}';
+			}
+			else {
+				$("#question-list #" + current).click();
+			}
+		});
+	});
+};
+
+function initQuestionsAdditional(){
+	$('a.info').fancybox();
+	var iTallest = 0;
+	var $Questions = $('.question');
+	$Questions.css({height:'auto'});
+	$Questions.each(function(i,el){
+		var sQ = 'q'+i
+			,$Q = $(el).addClass(sQ)
+			,iHeight = $Q.height();
+		if (iTallest<iHeight) iTallest = iHeight;
+		});
+		$('.questionBlock>div').height(iTallest);
+//		$('.legend').height(iTallest+100);
+		//
+		// components // todo: rem temp thead implementation
+		var $Components = $('#component-form>table')
+			,$Thead = $('<thead><tr></tr></thead>').appendTo($Components).find('tr');
+		$Components.find('td').each(function(i,el){
+			var $TD = $(el);
+			$('<th>'+(i<4?$TD.text():'').replace(':','')+'</th>').appendTo($Thead);
+
+	});
+}
+{% endblock %}

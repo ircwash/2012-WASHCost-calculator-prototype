@@ -1,0 +1,16 @@
+<table id="component-table">
+	<thead>
+		<tr>
+			{% for label in component_labels %}
+				<th>{{ label }}</th>
+			{% endfor %}
+		</tr>
+	</thead>
+	{% for component in components %}
+	<tr>
+		{% for value in component %}
+		<td>{{ value }}</td>
+		{% endfor %}
+	</tr>
+	{% endfor %}		
+</table>

@@ -1,0 +1,590 @@
+[
+    {
+        "pk": 1, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the area covered by the service  delivery model?\r\n", 
+            "number": 1, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the aim of the planned intervention?\r\n", 
+            "number": 2, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "Please give a short description of the service delivery model, the technologies, and the behaviours that the this intervention aims to achieve.\r\n", 
+            "number": 3, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": 1, 
+            "has_actors": false, 
+            "question": "How many people are targeted by this service model in the area of intervention?\r\n", 
+            "number": 4, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What percentage of people are reached by this service delivery model in the area of intervention?\r\n", 
+            "number": 5, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "In what country is this service delivery model found?\r\n", 
+            "number": 6, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": 2, 
+            "has_actors": false, 
+            "question": "What is the assumed rate of population growth in the areas served? This is used to calculate the added costs of extensions on top of the existing intervention.\r\n", 
+            "number": 7, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the average household size?\r\n", 
+            "number": 8, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "question.question", 
+        "fields": {
+            "category": 2, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the national norm or criteria for poverty?\r\n", 
+            "number": 1, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "question.question", 
+        "fields": {
+            "category": 2, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the average annual income of  the household?\r\n", 
+            "number": 2, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "question.question", 
+        "fields": {
+            "category": 3, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the proposed year of implementation?\r\n", 
+            "number": 1, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "question.question", 
+        "fields": {
+            "category": 3, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What type of system is being constructed (e.g. toilet)?", 
+            "number": 2, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "question.question", 
+        "fields": {
+            "category": 3, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "Missing question on row 49", 
+            "number": 3, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "question.question", 
+        "fields": {
+            "category": 3, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is/are the normative lifespan(s) of the key component(s) of the system (national norm or criteria) ?\r\n", 
+            "number": 4, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "question.question", 
+        "fields": {
+            "category": 3, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "How many people are expected to be served by a single system of this type?\r\n", 
+            "number": 5, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 16, 
+            "has_actors": false, 
+            "question": "In which year will this expenditure begin?\r\n", 
+            "number": 1, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 11, 
+            "has_actors": true, 
+            "question": "Over what period of time does this agent incur expenditures?", 
+            "number": 2, 
+            "default_answer": null, 
+            "question_type": 3, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 13, 
+            "has_actors": true, 
+            "question": "What is the total capital hardware investment(s) per capita made in sanitation facilities?\r\n", 
+            "number": 3, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 14, 
+            "has_actors": true, 
+            "question": "What is the total capital software investment(s) per capita made in sanitation facilities?\r\n", 
+            "number": 4, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 3, 
+            "has_actors": true, 
+            "question": "What is the expenditure incurred for routine maintenance and operational costs of sanitation facilities per person per year?\r\n", 
+            "number": 5, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 15, 
+            "has_actors": true, 
+            "question": "What expenditure is incurred for renewal, replacement and rehabilitation of sanitation facilities per person per year?\r\n", 
+            "number": 6, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 4, 
+            "has_actors": true, 
+            "question": "What is the size of loan X?", 
+            "number": 7, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 12, 
+            "has_actors": true, 
+            "question": "How many people are coverd by loan X?\r\n", 
+            "number": 8, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 5, 
+            "has_actors": true, 
+            "question": "What is the interest rate charged on loan X by the lender?\r\n", 
+            "number": 9, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 6, 
+            "has_actors": true, 
+            "question": "What is the interest rate charged to the lender?\r\n", 
+            "number": 10, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 8, 
+            "has_actors": true, 
+            "question": "What is the average/assumed time in years before repayment is complete?\r\n", 
+            "number": 11, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 9, 
+            "has_actors": true, 
+            "question": "What is the nominal expenditure on post construction support costs (mostly likely district and regional government) per person per year?", 
+            "number": 12, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "question.question", 
+        "fields": {
+            "category": 4, 
+            "formula_variable": 10, 
+            "has_actors": true, 
+            "question": "What are the costs of planning and policy making at national level per person per year?", 
+            "number": 13, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What percentage of households are within the national norm distance from a sanitation facility?\r\n", 
+            "number": 1, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the national norm distance from a household to a sanitation facility?\r\n", 
+            "number": 2, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What percentage of people openly defecate?\r\n", 
+            "number": 3, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What percentage of households or compounds contain a toilet/sanitation facility?\r\n", 
+            "number": 4, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What percentage of sanitation facilities have an impermeable slab?\r\n", 
+            "number": 5, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "Which members of the household use the sanitation facility?\r\n", 
+            "number": 6, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What percentage of facilities practice regular operation and maintenance (e.g. pit emptying, etc.)?\r\n", 
+            "number": 7, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What percentage of households clean their facilities regularly?\r\n", 
+            "number": 8, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the percentage  of facilities having safe reuse of faeces and urine per category\r\n", 
+            "number": 9, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "question.question", 
+        "fields": {
+            "category": 5, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "Is there any safe re-use of faeces and/or urine? Possible criteria could be: 9-12 months composting time in a dry latrine with no water introduced to the pit, <1 nematode egg per kilogram wet weight and <1000 faecal coli forms/litre are appropriate limits to consider for compost applied to topsoil\r\n", 
+            "number": 10, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "question.question", 
+        "fields": {
+            "category": 6, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "Missing question from row 141", 
+            "number": 1, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "question.question", 
+        "fields": {
+            "category": 6, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What is the assumed rate inflation?\r\n", 
+            "number": 2, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "question.question", 
+        "fields": {
+            "category": 7, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What are the main specifications of the water system / sanitation facility? For example: depth of borehole, length of distribution pipes, water source, hydrological conditions, \r\n", 
+            "number": 1, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "question.question", 
+        "fields": {
+            "category": 1, 
+            "formula_variable": null, 
+            "has_actors": false, 
+            "question": "What agents(s) pay for the expenditures incurred in this service delivery model (e.g. household, government, NGO)?", 
+            "number": 9, 
+            "default_answer": null, 
+            "question_type": 1, 
+            "is_required": false
+        }
+    }
+]

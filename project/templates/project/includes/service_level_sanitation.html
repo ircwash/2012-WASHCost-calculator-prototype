@@ -1,0 +1,41 @@
+<table border="1" bordercolor="#000" cellspacing="0" cellpadding="4" style="text-align:center;">
+    <tr style="background-color: #548DD4; color: #fff">
+        <td>Service levels</td>
+        <td>Accessibility</td>
+        <td>Use</td>
+        <td>Reliability (O&M)</td>
+        <td>Environmental protection (pollution and density)</td>
+    </tr>
+    <tr style="background-color: #B6DDE8;">
+        <td>Improved service</td>
+        <td>{{ answers.17 }} %<br />Each family dwelling has one or more toilets in the compound</td>
+        <td>{{ answers.20 }} %<br />Facilities used by all members of HH</td>
+        <td>{% if not rel_impr %} 0.0% {% else %} {{ rel_impr }} %{% endif %}<br />Regular or routine O&M (inc. pit emptying)  requiring minimal user effort</td>
+        <td>{% if not env_impr %} 0.0% {% else %} {{ env_impr }} %{% endif %}<br />Non problematic environmental impact / safe disposal and re-use of safe-by products</td>
+    </tr>
+    <tr>
+        <td>Basic service</td>
+        <td>{{ answers.18 }} %<br />Latrine with impermeable slab (hh or shared) at national norm distance from hh</td>
+        <td>{{ answers.21 }} %<br />Facilities used by some members of HH</td>
+        <td>{% ifequal answers.22 'No' %} 0.0% {% else %}{{ answers.22 }} %{% endifequal %}<br />Unreliable O&M (inc. pit emptying) and requiring high user effort</td>
+        <td>{% ifequal answers.23 'No' %} 0.0% {% else %}{{ answers.23 }} %{% endifequal %}<br />Non problematic environmental / impact and safe disposal</td>
+    </tr>
+    <tr>
+        <td style="background-color: #F2F2F2;">Limited service</td>
+        <td style="background-color: #F2F2F2;">{{ answers.19 }} %<br />Platform without (impermeable) slab separated faeces from users</td>
+        <td style="background-color: #BFBFBF;" rowspan="2">{{ use_no }} %<br />No or insufficient use</td>
+        <td style="background-color: #BFBFBF;" rowspan="2">{% if rel_no %}{{ rel_no }} %{% else %} 0.0%{% endif %}<br />No O&M (pit emptying) taking place and any extremely dirty toilet</td>
+        <td style="background-color: #BFBFBF;" rowspan="2">{% if env_no %}{{ env_no }} %{% else %} 0.0%{% endif %}<br />Significant environmental pollution, increasing with increased population density</td>
+    </tr>
+    <tr>
+        <td style="background-color: #BFBFBF;">No service</td>
+        <td style="background-color: #BFBFBF;">{{ acc_no }} %<br />No separation between user and faeces, e.g. open defecation</td>
+    </tr>
+</table>
+<br />
+<p>
+    {{ check_acc_no }}<br />
+    {{ check_use_no }}<br />
+    {{ check_rel_impr }}<br />
+    {{ check_env_impr }}<br />
+</p>

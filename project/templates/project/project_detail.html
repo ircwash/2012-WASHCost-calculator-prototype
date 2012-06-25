@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block bodyclass %}category{% endblock %}
+
+{% block content %}
+
+<nav class="side"><a href="{% url 'project_answers' object.id %}" class="button">generate report</a></nav>
+
+<form method="post" action="{% url 'project_change_title' object.id %}">
+	{% csrf_token %}
+	{{ change_title_form }}
+</form>
+
+<nav class="bread"><a>Main categories</a></nav>
+
+<hr />
+
+<h3>Click any category to <span>get started</span></h3>
+
+<ul id="category-list">
+	{% for category in category_list %}
+	<li class="{{ category|slugify }}">
+		<a href="{% url 'answer_question' object.id category.id %}">
+			<h4>{{ category }}<div class="flag">{{ category.percentage }}%</div></h4>
+			<!--todo: add percentage done -->
+			<div class="diagram"></div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+<br style="clear:both;" />
+{% endblock %}

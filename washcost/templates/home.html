@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block bodyclass %}home{% endblock %}
+
+{% block content %}
+<div class="col2_1">
+
+
+	<h2 class="large"><span>WASH</span>Cost calculator</h2>
+	<p class='first'>Helping practitioners, policy makers and researchers to run a sustainability check from an accounting and service level perspective:</p>
+	<ol>
+		<li>Is my service delivery model sustainable over time?</li>
+		<li>Who is paying for what costs over time?</li>
+		<li>What service level will my delivery model achieve?</li>
+	</ol>
+	<p>Human health and welfare depend on everyone having access to and using safe sanitation facilities that stay clean, work, do not pollute the environment and are reliable. Changing behaviours and installing technology is only the first step. Using basic accounting and the innovative research of the WASHCost project, estimates the sustainability of a sanitation service and forecast the expenditures of all stakeholders involved, e.g. households, governments and implementers in the short, medium and long term.</p>
+</div>
+<div class="col2_2">
+	<img src="/static/img/illHome.png" />
+</div>
+<br class="clear" />
+<div class='bottom'>
+	<img src="{{ STATIC_URL }}img/fig1.png" width=350px height=175px />
+	<img src="{{ STATIC_URL }}img/fig2.png" width=284px height=175px />
+	<img src="{{ STATIC_URL }}img/fig3.png" width=350px height=175px />
+</div>
+{% endblock %}

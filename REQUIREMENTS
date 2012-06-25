@@ -1,0 +1,7 @@
+Django==1.4
+South==0.7.4
+django-extensions==0.8
+django-openid-auth==0.4
+python-openid==2.2.5
+wsgiref==0.1.2
+yolk==0.4.3

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block bodyclass %}projectAnswers{% endblock %}
+
+{% block extrahead %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/lib/highcharts/highcharts.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+
+<h2>{{ project.title }}</h2>
+
+<nav class="bread"><a href="{% url 'project_detail' project.id %}">Back to main categories</a><a>Output report</a></nav>
+
+<hr />
+
+<h2><span>Sustainability check</span></h2>
+
+<h3>Shortfall in expenditure after 20 years: {{ currency_symbol }} <span>{{ cap_shortfall|floatformat:2 }}</span></h3>
+<h3>See "<span>Service level - sanitation</span>" below to see the level of service your service delivery model achieves.</h3>
+
+<hr />
+
+<nav class="col2_13">
+	{% for category in category_list %}
+		<a href="{% url 'project_answers' project.id category.id %}" class="button">{{ category.name }}</a>
+	{% endfor %}
+</nav>
+<div id="report" class="col2_23">
+	<h3><span>{{ category.name }}</span></h3>
+	{% if category.name == "Hardware & Software" %}{% include 'project/includes/hardware_software.html' %}{% endif %}
+    {% if category.name == "Contextual information" %}{% include 'project/includes/contextual_information.html' %}{% endif %}
+    {% if category.name == "Life-cycle costs" %}{% include 'project/includes/life_cycle.html' %}{% endif %}
+    {% if category.name == "Service level - sanitation" %}{% include 'project/includes/service_level_sanitation.html' %}{% endif %}
+</div>
+<br class="clear" />
+
+{% endblock %}
+
+{% block inlineJavascript %}
+
+{% if category.name == "Contextual information" %}
+
+{% include 'project/charts/contextual_information.js' %}
+
+{% elif category.name == "Life-cycle costs" %}
+
+{% include 'project/charts/life_cycle.js' %}
+
+{% elif category.name == "Service level - sanitation" %}
+
+{% include 'project/charts/service_level_sanitation.js' %}
+
+{% elif category.name == "Hardware & Software" %}
+
+{% include 'project/charts/hardware_software.js' %}
+
+{% endif %}
+
+{% endblock %}

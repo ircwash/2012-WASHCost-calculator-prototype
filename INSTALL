@@ -1,0 +1,24 @@
+WASHCOST
+========
+
+REQUIREMENTS
+============
+See the REQUIREMENTS file for requirements.
+Use pip to install.
+
+GIT CLONE
+=========
+Clone git repository to server.
+
+DATABASE
+========
+Use database of your choice (e.g. MySQL or PostgreSQL).
+Current site uses PostgreSQL and is recommended.
+After running manage.py syncdb use south for migrations.
+
+
+PYTHON/DJANGO WEB FRAMEWORK
+======
+No special requirements or dependencies (see REQUIREMENTS).
+It is recommended to use virtualenv for development and production.
+Current server OS is Linux Debian 6 and is recommended.

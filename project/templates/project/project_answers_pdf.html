@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block bodyclass %}projectAnswers pdf{% endblock %}
+
+{% block prehead %}
+<base href='{{ BASE_URL }}' />
+{% endblock %}
+
+{% block extrahead %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/lib/highcharts/highcharts.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block body %}
+
+<h1>{{ project.title }}</h1>
+
+<p>
+	Author: {% if user.first_name and user.last_name %}{{ user.first_name }} {{ user.last_name }}{% else %}{{ user }}{% endif %}<br />
+	Date Published: {% now "SHORT_DATETIME_FORMAT" %}
+</p>
+
+<hr />
+
+<h2>Sustainability check</h2>
+
+<h3>Shortfall in expenditure after 20 years: US$ <span>{{ cap_shortfall|floatformat:2 }}</span></h3>
+
+<h2 style="page-break-before: always">Contextual Information</h2>
+{% include 'project/includes/contextual_information.html' %}
+
+<h2 style="page-break-before: always">Life-Cycle Costs</h2>
+{% include 'project/includes/life_cycle.html' %}
+
+<h2 style="page-break-before: always">Service level Sanitation</h2>
+{% include 'project/includes/service_level_sanitation.html' %}
+
+<h2 style="page-break-before: always">Hardware & Software</h2>
+{% include 'project/includes/hardware_software.html' %}
+
+<script type="text/javascript">
+{% include 'project/charts/contextual_information.js' with pdf="True" %}
+{% include 'project/charts/life_cycle.js' with pdf="True" %}
+{% include 'project/charts/service_level_sanitation.js' with pdf="True" %}
+{% include 'project/charts/hardware_software.js' with pdf="True" %}
+</script>
+
+{% endblock %}
