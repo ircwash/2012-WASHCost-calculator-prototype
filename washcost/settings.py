@@ -1,6 +1,7 @@
 # Django settings for washcost project.
 import os
 from django.core.urlresolvers import reverse_lazy
+from local_settings import *
 
 def rel(*x):
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
@@ -8,22 +9,13 @@ def rel(*x):
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
+ADMINS = ADMINS
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '***',                      # Or path to database file if using sqlite3.
-        'USER': '***',                      # Not used with sqlite3.
-        'PASSWORD': '***',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+DATABASES = DATABASES
+
+SERVER_EMAIL = SERVER_EMAIL
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -87,7 +79,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'jj@$@nv_jlkcjmlb1eh_=@&amp;k4$*r)39!l@&amp;0o3^4y*#&amp;mp0=c*'
+SECRET_KEY = SECRET_KEY
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
