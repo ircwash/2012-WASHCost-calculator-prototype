@@ -108,9 +108,9 @@ class Question(models.Model):
     def has_next(self):
         try:
             Question.objects.get(category=self.category, number=self.number+1)
-            return True;
+            return True
         except Question.DoesNotExist:
-            return False;
+            return False
     
     def next(self):
         return Question.objects.get(category=self.category, number=self.number+1)
